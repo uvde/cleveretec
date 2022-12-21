@@ -1,0 +1,25 @@
+---------------------
+CHECK RECEIPT
+---------------------
+21-12-2022
+  19:32:42
+---------------------
+| QTY | DESCRIPTION                   |   PRICE |   TOTAL |
+| 1   | Sage - Rubbed                 |$  14.71 |$  14.71 |
+| 4   | Syrup - Golden, Lyles         |$  60.15 |$ 240.60 |
+| 2   | Glass - Wine, Plastic         |$  38.06 |$  76.12 |
+| 3   | Muffin Batt - Carrot Spice    |$  79.06 |$ 237.18 |
+| 1   | Silicone Parch. 16.3x24.3     |$  67.35 |$  67.35 |
+| 2   | Carroway Seed                 |$   2.52 |$   5.04 |
+| 3   | Appetizer - Escargot Puff     |$  73.42 |$ 220.26 |
+| 2   | Compound - Passion Fruit      |$  45.87 |$  91.74 |
+| 1   | Coconut - Shredded, Unsweet   |$  25.79 |$  25.79 |
+| 2   | Wine - Sauvignon Blanc        |$  52.17 |$ 104.34 |
+Total... $1083.13
+------------------------
+Discount product with sale... $0.00
+Discount with cart... $32.49
+------------------------
+Total with discount... $1050.64
+---------------------
+Thank you for shopping

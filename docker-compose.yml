@@ -1,0 +1,58 @@
+version: '2.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clevertec-app
+    #restart: unless-stopped
+    tty: true
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+    environment:
+      server.port: 8090
+      spring.profiles.active: docker
+      spring.datasource.url: jdbc:postgresql://db:5432/database
+      spring.datasource.username: postgres
+      spring.datasource.password: postgres
+    ports:
+      - "8090:8090"
+    networks:
+      - default
+      - app-network
+  db:
+    image: 'postgres:10.16-alpine'
+    container_name: clevertec-db
+    networks:
+      - app-network
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=database
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "database", "-U", "postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+networks:
+  app-network:
+    driver: bridge
+  default:
+    external:
+      name: app-network
+
+volumes:
+  db-data:
+    driver: local
+  db-keycloak-data:
+    driver: local
