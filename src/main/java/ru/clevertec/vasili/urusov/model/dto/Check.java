@@ -1,6 +1,4 @@
-package ru.clevertec.vasili.urusov.model.entity;
-
-import ru.clevertec.vasili.urusov.model.dto.CheckProduct;
+package ru.clevertec.vasili.urusov.model.dto;
 
 import java.util.List;
 

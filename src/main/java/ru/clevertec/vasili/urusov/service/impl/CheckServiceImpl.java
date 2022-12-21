@@ -3,7 +3,7 @@ package ru.clevertec.vasili.urusov.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.clevertec.vasili.urusov.model.dto.OrderOfClientDTO;
-import ru.clevertec.vasili.urusov.model.entity.Check;
+import ru.clevertec.vasili.urusov.model.dto.Check;
 import ru.clevertec.vasili.urusov.output.CheckOutput;
 import ru.clevertec.vasili.urusov.output.OutputFactory;
 import ru.clevertec.vasili.urusov.render.Render;

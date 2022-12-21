@@ -1,8 +1,9 @@
 package ru.clevertec.vasili.urusov.model.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor

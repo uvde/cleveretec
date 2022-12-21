@@ -14,13 +14,13 @@ services:
     links:
       - db
     environment:
-      server.port: 8090
+      server.port: 8080
       spring.profiles.active: docker
       spring.datasource.url: jdbc:postgresql://db:5432/database
       spring.datasource.username: postgres
       spring.datasource.password: postgres
     ports:
-      - "8090:8090"
+      - "8080:8080"
     networks:
       - default
       - app-network

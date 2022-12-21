@@ -1,7 +1,7 @@
 package ru.clevertec.vasili.urusov.util;
 
 import org.apache.commons.lang3.StringUtils;
-import ru.clevertec.vasili.urusov.model.entity.OrderOfClient;
+import ru.clevertec.vasili.urusov.model.dto.OrderOfClient;
 
 import java.util.HashMap;
 import java.util.Map;

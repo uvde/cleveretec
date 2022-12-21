@@ -1,4 +1,4 @@
-package ru.clevertec.vasili.urusov.model.entity;
+package ru.clevertec.vasili.urusov.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package ru.clevertec.vasili.urusov.render.impl;
 
-import ru.clevertec.vasili.urusov.model.entity.Check;
-import ru.clevertec.vasili.urusov.model.entity.CheckProduct;
+import ru.clevertec.vasili.urusov.model.dto.Check;
+import ru.clevertec.vasili.urusov.model.dto.CheckProduct;
 import ru.clevertec.vasili.urusov.render.Render;
 
 
