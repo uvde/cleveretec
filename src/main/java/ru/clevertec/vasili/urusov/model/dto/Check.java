@@ -1,5 +1,7 @@
 package ru.clevertec.vasili.urusov.model.entity;
 
+import ru.clevertec.vasili.urusov.model.dto.CheckProduct;
+
 import java.util.List;
 
 public class Check {
