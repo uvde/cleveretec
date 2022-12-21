@@ -25,23 +25,87 @@ Stack
 ### Pattern that used in project
 - Builder
 is the best decision for difficult entity.
-```aidl
+```java
 public class Check {
 
     private final List<CheckProduct> productsOfClient;
     private final Double discountOfProductWithSale;
     private final Double cardDiscount;
     private final Double totalPrice;
-     
-    ...
+
+    public Check(List<CheckProduct> productOfClient, Double discountOfProductWithSale, Double cardDiscount, Double totalPrice) {
+        this.productsOfClient = productOfClient;
+        this.discountOfProductWithSale = discountOfProductWithSale;
+        this.cardDiscount = cardDiscount;
+        this.totalPrice = totalPrice;
+    }
+
+    public List<CheckProduct> getProductsOfClient() {
+        return productsOfClient;
+    }
+
+    public Double getDiscountOfProductWithSale() {
+        return discountOfProductWithSale;
+    }
+
+    public Double getCardDiscount() {
+        return cardDiscount;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public Double getTotalPriseWithDiscount(){
+        Double totalPriseWithDiscount = totalPrice - (discountOfProductWithSale + cardDiscount);
+        return totalPriseWithDiscount;
+    }
+
     public static CheckBuilder builder(){
         return new CheckBuilder();
     }
 
     public static class CheckBuilder{
-        ...
-          public Check build(){
-            ...       
+
+        private List<CheckProduct> productsOfClient;
+        private Double discountOfProductWithSale;
+        private Double cardDiscount;
+        private Double totalPrice;
+
+        public CheckBuilder setProductsOfClient(List<CheckProduct> productOfClient) {
+            this.productsOfClient = productOfClient;
+            return this;
+        }
+
+        public CheckBuilder setDiscountOfProductWithSale(Double discountOfProductWithSale) {
+            this.discountOfProductWithSale = discountOfProductWithSale;
+            return this;
+        }
+
+        public CheckBuilder setCardDiscount(Double cardDiscount) {
+            this.cardDiscount = cardDiscount;
+            return this;
+        }
+
+        public CheckBuilder setTotalPrice(Double totalPrice) {
+            this.totalPrice = totalPrice;
+            return this;
+        }
+
+        public Check build(){
+
+            if (this.productsOfClient == null){
+                throw new NullPointerException("CheckBuilder dont has productOfClient");
+            }
+            if (this.discountOfProductWithSale == null){
+                this.discountOfProductWithSale = 0.;
+            }
+            if (this.cardDiscount == null){
+                this.cardDiscount = 0.;
+            }
+            if (this.totalPrice == null){
+                throw new NullPointerException("CheckBuilder dont has totalPrice");
+            }
             Check check = new Check(productsOfClient, discountOfProductWithSale, cardDiscount, totalPrice);
             return check;
         }
@@ -51,7 +115,7 @@ public class Check {
 ```
 - Decorator.
 I use it for make a good render in CheckServiceImpl.
-```aidl
+```java
  Render render = new RenderObverseInformation(new RenderCheck(check));
  return render.render();
 ```
@@ -64,7 +128,7 @@ ru/clevertec/vasili/urusov/output/OutputFactory.java
  __Swagger__ : http://localhost:8080/swagger-ui/index.html#/
 
 ## How to populate the database
-
+Use the Postman for post json to app. 
 1 http://localhost:8080/v1/cards/list/add
 ```json
 [
@@ -339,30 +403,3 @@ http://localhost:8080/v1/check/creat
     "numberDiscountCart": 1111
 }
 ```
-
-You should take String 
-/---------------------
-CHECK RECEIPT
-/---------------------
-21-12-2022
-19:32:42
----------------------
-| QTY | DESCRIPTION                   |   PRICE |   TOTAL |
-| 1   | Sage - Rubbed                 |$  14.71 |$  14.71 |
-| 4   | Syrup - Golden, Lyles         |$  60.15 |$ 240.60 |
-| 2   | Glass - Wine, Plastic         |$  38.06 |$  76.12 |
-| 3   | Muffin Batt - Carrot Spice    |$  79.06 |$ 237.18 |
-| 1   | Silicone Parch. 16.3x24.3     |$  67.35 |$  67.35 |
-| 2   | Carroway Seed                 |$   2.52 |$   5.04 |
-| 3   | Appetizer - Escargot Puff     |$  73.42 |$ 220.26 |
-| 2   | Compound - Passion Fruit      |$  45.87 |$  91.74 |
-| 1   | Coconut - Shredded, Unsweet   |$  25.79 |$  25.79 |
-| 2   | Wine - Sauvignon Blanc        |$  52.17 |$ 104.34 |
-Total... $1083.13
-------------------------
-Discount product with sale... $0.00
-Discount with cart... $32.49
-------------------------
-Total with discount... $1050.64
-/---------------------
-Thank you for shopping
