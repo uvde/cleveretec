@@ -123,7 +123,7 @@ I use it for make a good render in CheckServiceImpl.
  return render.render();
 ```
 [Render](https://github.com/uvde/cleveretec/blob/63a9a8aa41289dd3ec9abb9ab564bf4627689cb9/src/main/java/ru/clevertec/vasili/urusov/render)
-- Factory
+- Factory. 
 I use it only for example 
 [OutputFactory.java](https://github.com/uvde/cleveretec/blob/63a9a8aa41289dd3ec9abb9ab564bf4627689cb9/src/main/java/ru/clevertec/vasili/urusov/output/OutputFactory.java).
 This class is singleton with double check.
@@ -148,6 +148,8 @@ http://localhost:8080/v1/check/creat
     "numberDiscountCart": 1111
 }
 ```
+Use the PostMan to post this json to app.
+[Example of check](https://github.com/uvde/cleveretec/blob/cd058476c2052e2a596af242d2f68f9acd93f0e4/data/check.txt)
 
 ## Command-line arguments
 I created this class [ParserRequestClient.java](https://github.com/uvde/cleveretec/blob/9ef54cfadcddeeced9886b022f02772b09c21169/src/main/java/ru/clevertec/vasili/urusov/util/ParserRequestClient.java) for parsing the information from the command-line arguments.
