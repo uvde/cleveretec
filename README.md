@@ -16,11 +16,14 @@ Stack
 + Spring Boot
 + PostgreSQL
 + Docker
++ FlyWay
++ Swagger
 
 ### Start This Project
 1. git clone https://github.com/uvde/cleveretec.git
 2. go to directory of project 
 3. docker-compose up
+
 
 ### Pattern that used in project
 - Builder
@@ -143,3 +146,7 @@ http://localhost:8080/v1/check/creat
     "numberDiscountCart": 1111
 }
 ```
+
+## Command-line arguments
+I created this class [ParserRequestClient.java](https://github.com/uvde/cleveretec/blob/9ef54cfadcddeeced9886b022f02772b09c21169/src/main/java/ru/clevertec/vasili/urusov/util/ParserRequestClient.java) for parsing the information from the command-line arguments.
+It does nothing in spring app because there is a more flexible and efficient way to get the  information such as json.
