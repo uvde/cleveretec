@@ -122,9 +122,11 @@ I use it for make a good render in CheckServiceImpl.
  Render render = new RenderObverseInformation(new RenderCheck(check));
  return render.render();
 ```
+[Render](https://github.com/uvde/cleveretec/blob/63a9a8aa41289dd3ec9abb9ab564bf4627689cb9/src/main/java/ru/clevertec/vasili/urusov/render)
 - Factory
-I use it only for example.  
-ru/clevertec/vasili/urusov/output/OutputFactory.java
+I use it only for example 
+[OutputFactory.java](https://github.com/uvde/cleveretec/blob/63a9a8aa41289dd3ec9abb9ab564bf4627689cb9/src/main/java/ru/clevertec/vasili/urusov/output/OutputFactory.java).
+This class is singleton with double check.
 
 ## Endpoints
 
