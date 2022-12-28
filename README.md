@@ -27,7 +27,7 @@ Stack
 
 ### Pattern that used in project
 - Builder
-is the best decision for difficult entity.
+is the best decision for a difficult entity.
 ```java
 public class Check {
 
@@ -153,4 +153,8 @@ Use the PostMan to post this json to app.
 
 ## Command-line arguments
 I created this class [ParserRequestClient.java](https://github.com/uvde/cleveretec/blob/9ef54cfadcddeeced9886b022f02772b09c21169/src/main/java/ru/clevertec/vasili/urusov/util/ParserRequestClient.java) for parsing the information from the command-line arguments.
-It does nothing in spring app because there is a more flexible and efficient way to get the  information such as json.
+It does nothing in Spring app because there is a more flexible and efficient way to get the  information such as json.
+
+## Migration db
+I use FlyWay to create tables in PostgreSQL. It is a simple migration db in Spring App. 
+[There are](https://github.com/uvde/cleveretec/blob/0e45683ec53da607db4ebbe7dc49a4f56e1f2359/src/main/resources/db/migration) SQL scripts for migration.
