@@ -20,7 +20,7 @@ Stack
 + Swagger
 
 ### Start This Project
-1. git clone https://github.com/uvde/cleveretec.git
+1. ```git clone https://github.com/uvde/cleveretec.git```
 2. go to directory of project 
 3. docker-compose up
 
