@@ -11,7 +11,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class OrderOfClientDTO {
 
-    private Map<Long, Integer> idAntQuantityOfProductOfClient;
+    private Map<Long, Integer> idAndQuantityOfProductOfClient;
     private Integer numberDiscountCart;
 
 }

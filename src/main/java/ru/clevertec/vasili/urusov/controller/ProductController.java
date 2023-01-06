@@ -1,5 +1,6 @@
 package ru.clevertec.vasili.urusov.controller;
 
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +23,6 @@ public class ProductController {
         productService.addProducts(productDTOList);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable Long id){
-        log.info("delete product by id{}", id);
-        productService.deleteById(id);
-    }
-
     @PostMapping("/one/add")
     public void addProduct(@RequestBody ProductDTO productDTO){
         log.info("add product in repository {}", productDTO);
@@ -41,14 +36,26 @@ public class ProductController {
     }
 
     @GetMapping("/all/discount/find")
-    public List<ProductDTO> findAllByDiscount(@RequestBody Boolean discount){
+    public List<ProductDTO> findAllByDiscount(@RequestParam Boolean discount){
         log.info("get product by discount {}", discount);
         return productService.findAllByDiscount(discount);
+    }
+
+    @GetMapping("/find/by/name/{name}")
+    public ProductDTO findByName(@PathVariable String name){
+        log.info("get name for finding product by name {}", name);
+        return productService.findByName(name);
     }
 
     @DeleteMapping("/all/delete")
     public void deleteAll(){
         log.info("delete all product");
         productService.deleteAll();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable Long id){
+        log.info("delete product by id{}", id);
+        productService.deleteById(id);
     }
 }

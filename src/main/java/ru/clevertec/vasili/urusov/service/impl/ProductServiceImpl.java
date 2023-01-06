@@ -45,6 +45,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(readOnly = true)
+    public ProductDTO findByName(String name) {
+        Optional<Product> optionalProduct = productRepository.findByName(name);
+        if (optionalProduct.isPresent()){
+            Product product = optionalProduct.get();
+            return new ProductDTO(product.getName(), product.getPrice(), product.getDiscount());
+        }else {
+            throw new IllegalArgumentException("There isn't product with this name = " + name);
+        }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public ProductDTO findById(Long id) {
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()){

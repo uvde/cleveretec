@@ -17,7 +17,8 @@ public class SwaggerConfig {
     public OpenAPI springApplicationOpenAPI() {
         var info = new Info()
                 .title("API. Clevertec")
-                .description("Test task: clevertec"
+                .version("1.0.0")
+                .description("## Test task: clevertec\n"
                         + " - [Task](https://clevertec.ru/)\n ");
 
         return new OpenAPI()

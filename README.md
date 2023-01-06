@@ -137,7 +137,7 @@ This class is singleton with double check.
 http://localhost:8080/v1/check/creat
 ```json
 {
-    "idAntQuantityOfProductOfClient": {
+    "idAndQuantityOfProductOfClient": {
         "1": 1,
         "2": 4,
         "3": 2,

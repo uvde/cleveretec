@@ -1,0 +1,255 @@
+openapi: 3.0.1
+info:
+  title: API. Clevertec
+  description: "## Test task: clevertec\n - [Task](https://clevertec.ru/)\n "
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /v1/products/one/add:
+    post:
+      tags:
+      - product-controller
+      operationId: addProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+  /v1/products/list/add:
+    post:
+      tags:
+      - product-controller
+      operationId: addProducts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProductDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+  /v1/cards/list/add:
+    post:
+      tags:
+      - card-controller
+      operationId: addCards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/CardDTO'
+        required: true
+      responses:
+        "200":
+          description: OK
+  /v1/products/find/{id}:
+    get:
+      tags:
+      - product-controller
+      operationId: findById
+      parameters:
+      - name: id
+        in: path
+        description: id of product to be searched
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProductDTO'
+  /v1/products/find/by/name/{name}:
+    get:
+      tags:
+      - product-controller
+      operationId: findByName
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProductDTO'
+  /v1/products/all/discount/find:
+    get:
+      tags:
+      - product-controller
+      operationId: findAllByDiscount
+      parameters:
+      - name: discount
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductDTO'
+  /v1/check/creat:
+    get:
+      tags:
+      - check-controller
+      operationId: getCheck
+      parameters:
+      - name: orderOfClientDTO
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/OrderOfClientDTO'
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "---------------------\n
+                          CHECK RECEIPT\n
+                          ---------------------\n
+                          26-12-2022\n
+                            18:30:03\n
+                          ---------------------\n
+                          | QTY | DESCRIPTION                   |   PRICE |   TOTAL |\n
+                          | 1   | Sage - Rubbed                 |$  14.71 |$  14.71 |\n
+                          | 4   | Syrup - Golden, Lyles         |$  60.15 |$ 240.60 |\n
+                          | 2   | Glass - Wine, Plastic         |$  38.06 |$  76.12 |\n
+                          | 3   | Muffin Batt - Carrot Spice    |$  79.06 |$ 237.18 |\n
+                          | 1   | Silicone Parch. 16.3x24.3     |$  67.35 |$  67.35 |\n
+                          | 2   | Carroway Seed                 |$   2.52 |$   5.04 |\n
+                          | 3   | Appetizer - Escargot Puff     |$  73.42 |$ 220.26 |\n
+                          | 2   | Compound - Passion Fruit      |$  45.87 |$  91.74 |\n
+                          | 1   | Coconut - Shredded, Unsweet   |$  25.79 |$  25.79 |\n
+                          | 2   | Wine - Sauvignon Blanc        |$  52.17 |$ 104.34 |\n
+                          Total... $1083.13\n
+                          ------------------------\n
+                          Discount product with sale... $0.00\n
+                          Discount with cart... $32.49\n
+                          ------------------------\n
+                          Total with discount... $1050.64\n
+                          ---------------------\n
+                          Thank you for shopping\n"
+  /v1/cards/{id}:
+    get:
+      tags:
+      - card-controller
+      operationId: findById_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CardDTO'
+  /v1/cards/all/find:
+    get:
+      tags:
+      - card-controller
+      operationId: findAll
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CardDTO'
+  /v1/products/delete/{id}:
+    delete:
+      tags:
+      - product-controller
+      operationId: deleteById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+  /v1/products/all/delete:
+    delete:
+      tags:
+      - product-controller
+      operationId: deleteAll
+      responses:
+        "200":
+          description: OK
+  /v1/cards/all/delete:
+    delete:
+      tags:
+      - card-controller
+      operationId: deleteAll_1
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    ProductDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "apple"
+        price:
+          type: number
+          format: double
+          example: 3.55
+        discount:
+          type: boolean
+          example: true
+    CardDTO:
+      type: object
+      properties:
+        number:
+          type: integer
+          format: int32
+          example: 1234
+    OrderOfClientDTO:
+      type: object
+      properties:
+        idAndQuantityOfProductOfClient:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+            example: 3
+        numberDiscountCart:
+          type: integer
+          format: int32
+          example: 1111

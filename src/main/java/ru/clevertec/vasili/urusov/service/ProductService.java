@@ -12,5 +12,5 @@ public interface ProductService {
     void addProduct(ProductDTO productDTO);
     ProductDTO findById(Long id);
     List<ProductDTO> findAllByDiscount(Boolean discount);
-
+    ProductDTO findByName(String name);
 }

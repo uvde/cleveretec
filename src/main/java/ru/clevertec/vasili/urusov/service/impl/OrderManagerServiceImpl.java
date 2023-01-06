@@ -39,7 +39,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
 
     private List<CheckProduct> creatListOfProductsOfClient(OrderOfClientDTO orderOfClientDTO) {
         List<CheckProduct> productsOfClient = new ArrayList<>();
-        Map<Long, Integer> order = orderOfClientDTO.getIdAntQuantityOfProductOfClient();
+        Map<Long, Integer> order = orderOfClientDTO.getIdAndQuantityOfProductOfClient();
         for (Map.Entry<Long, Integer> idAndQuantityOfProduct : order.entrySet()){
             Optional<Product> product = productRepository.findById(idAndQuantityOfProduct.getKey());
             Integer quantity = idAndQuantityOfProduct.getValue();
@@ -53,7 +53,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
     }
 
     private void hasProductInRepositoryById(OrderOfClientDTO orderOfClientDTO){
-        Map<Long, Integer> order = orderOfClientDTO.getIdAntQuantityOfProductOfClient();
+        Map<Long, Integer> order = orderOfClientDTO.getIdAndQuantityOfProductOfClient();
         for(Long id : order.keySet()) {
             if (!productRepository.existsById(id)) {
                 throw new IllegalArgumentException("There isn't product with this id = " + id);
