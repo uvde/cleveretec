@@ -20,10 +20,31 @@ Stack
 + Swagger
 
 ### Start This Project
-1. ```git clone https://github.com/uvde/cleveretec.git```
+1. ```shell git clone https://github.com/uvde/cleveretec.git```
 2. go to directory of project 
-3. docker-compose up
+3. ```shell docker-compose up```
 
+## Endpoints app
+__Swagger__ : http://localhost:8080/swagger-ui/index.html#/
+
+### Endpoint for check
+
+http://localhost:8080/v1/check/creat
+```json
+{
+  "idAndQuantityOfProductOfClient": {
+    "1": 1,
+    "2": 4,
+    "3": 2,
+    "4": 3,
+    "5": 5,
+    "6": 3
+  },
+  "numberDiscountCart": 1111
+}
+```
+__Use the PostMan__ to post this json __GET=>Body=>raw=>JSON__ to app.
+[Example of check](https://github.com/uvde/cleveretec/blob/cd058476c2052e2a596af242d2f68f9acd93f0e4/data/check.txt)
 
 ### Pattern that used in project
 - Builder
@@ -128,28 +149,6 @@ I use it only for example
 [OutputFactory.java](https://github.com/uvde/cleveretec/blob/63a9a8aa41289dd3ec9abb9ab564bf4627689cb9/src/main/java/ru/clevertec/vasili/urusov/output/OutputFactory.java).
 This class is singleton with double check.
 
-## Endpoints
-
- __Swagger__ : http://localhost:8080/swagger-ui/index.html#/
-
-### Endpoint for check
-
-http://localhost:8080/v1/check/creat
-```json
-{
-    "idAndQuantityOfProductOfClient": {
-        "1": 1,
-        "2": 4,
-        "3": 2,
-        "4": 3,
-        "5": 5,
-        "6": 3
-    },
-    "numberDiscountCart": 1111
-}
-```
-Use the PostMan to post this json to app.
-[Example of check](https://github.com/uvde/cleveretec/blob/cd058476c2052e2a596af242d2f68f9acd93f0e4/data/check.txt)
 
 ## Command-line arguments
 I created this class [ParserRequestClient.java](https://github.com/uvde/cleveretec/blob/9ef54cfadcddeeced9886b022f02772b09c21169/src/main/java/ru/clevertec/vasili/urusov/util/ParserRequestClient.java) for parsing the information from the command-line arguments.

@@ -9,6 +9,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 configurations {
+
     compileOnly {
         extendsFrom annotationProcessor
     }
@@ -33,6 +34,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
     // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
     implementation 'org.flywaydb:flyway-core:8.5.13'
+
 
 
 }
