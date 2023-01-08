@@ -43,7 +43,9 @@ http://localhost:8080/v1/check/creat
   "numberDiscountCart": 1111
 }
 ```
-__Use the PostMan__ to post this json __GET=>Body=>raw=>JSON__ to app.
+__Use the PostMan__ to post this json to app.\
+GET=>Body=>raw=>JSON\
+DON`T USE SWAGGER. IT WILL RESULT IN AN ERROR.\
 [Example of check](https://github.com/uvde/cleveretec/blob/cd058476c2052e2a596af242d2f68f9acd93f0e4/data/check.txt)
 
 ### Pattern that used in project
