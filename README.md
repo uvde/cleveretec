@@ -20,9 +20,9 @@ Stack
 + Swagger
 
 ### Start This Project
-1. ```shell git clone https://github.com/uvde/cleveretec.git```
+1. ```git clone https://github.com/uvde/cleveretec.git```
 2. go to directory of project 
-3. ```shell docker-compose up```
+3. ```docker-compose up```
 
 ## Endpoints app
 __Swagger__ : http://localhost:8080/swagger-ui/index.html#/
