@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: API. Clevertec
-  description: "## Test task: clevertec\n - [Task](https://clevertec.ru/)\n "
+  description: "## Test task: clevertec\n - [Task](https://drive.google.com/file/d/1GmTwl-DU9Gra1CRknIlYR7KFxk17_L6e/view)\n "
   version: 1.0.0
 servers:
 - url: http://localhost:8080
