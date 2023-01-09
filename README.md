@@ -23,6 +23,7 @@ Stack
 1. ```git clone https://github.com/uvde/cleveretec.git```
 2. go to directory of project 
 3. ```docker-compose up```
+   create the network manually using `docker network create app-network` if in need
 
 ## Endpoints app
 __Swagger__ : http://localhost:8080/swagger-ui/index.html#/
@@ -48,7 +49,7 @@ GET=>Body=>raw=>JSON\
 DON`T USE SWAGGER. IT WILL RESULT IN AN ERROR.\
 [Example of check](https://github.com/uvde/cleveretec/blob/cd058476c2052e2a596af242d2f68f9acd93f0e4/data/check.txt)
 
-### Pattern that used in project
+## Pattern that used in project
 - Builder
 is the best decision for a difficult entity.
 ```java

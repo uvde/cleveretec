@@ -47,6 +47,12 @@ public class ProductController {
         return productService.findByName(name);
     }
 
+    @GetMapping("find/all")
+    public List<ProductDTO> findAll(){
+        log.info("get all products");
+        return productService.findAll();
+    }
+
     @DeleteMapping("/all/delete")
     public void deleteAll(){
         log.info("delete all product");

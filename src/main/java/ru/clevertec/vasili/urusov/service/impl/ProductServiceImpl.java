@@ -19,6 +19,15 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
+    @Transactional(readOnly = true)
+    public List<ProductDTO> findAll() {
+        List<ProductDTO> productDTOList = new ArrayList<>();
+        productRepository.findAll()
+                .forEach(product -> productDTOList.add(new ProductDTO(product.getName(), product.getPrice(), product.getDiscount())));
+        return productDTOList;
+    }
+
+    @Override
     @Transactional
     public void addProducts(List<ProductDTO> productDTOList) {
         List<Product> productList = new ArrayList<>();

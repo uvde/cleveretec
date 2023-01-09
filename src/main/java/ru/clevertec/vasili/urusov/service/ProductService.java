@@ -13,4 +13,5 @@ public interface ProductService {
     ProductDTO findById(Long id);
     List<ProductDTO> findAllByDiscount(Boolean discount);
     ProductDTO findByName(String name);
+    List<ProductDTO> findAll();
 }
