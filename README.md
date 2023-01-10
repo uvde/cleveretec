@@ -8,7 +8,7 @@
 - __Email__: uvd.1994@gmail.com
 - __GitHub__: [uvde](https://github.com/uvde)
 
-###[Task](https://drive.google.com/file/d/1GmTwl-DU9Gra1CRknIlYR7KFxk17_L6e/view)
+[Task]() \
 Stack
 
 + Java 17
