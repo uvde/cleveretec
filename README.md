@@ -8,7 +8,7 @@
 - __Email__: uvd.1994@gmail.com
 - __GitHub__: [uvde](https://github.com/uvde)
 
-[Task]() \
+[Task](https://github.com/uvde/cleveretec/blob/master/Task.pdf) \
 Stack
 
 + Java 17
